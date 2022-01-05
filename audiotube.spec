@@ -31,8 +31,8 @@ BuildRequires:	cmake(KF5CoreAddons)
 BuildRequires:	cmake(KF5Crash)
 BuildRequires:	python3dist(ytmusicapi)
 BuildRequires:	cmake(pybind11)
-BuildRequires:	youtube-dl
-Requires:	youtube-dl
+BuildRequires:	python3dist(yt-dlp)
+Requires:	python3dist(yt-dlp)
 
 %description
 YouTube Music client for Plasma Mobile
