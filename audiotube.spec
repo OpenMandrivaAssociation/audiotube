@@ -30,6 +30,7 @@ BuildRequires:	cmake(KF5I18n)
 BuildRequires:	cmake(KF5CoreAddons)
 BuildRequires:	cmake(KF5Crash)
 BuildRequires:	python3dist(ytmusicapi)
+BuildRequires:	cmake(pybind11)
 BuildRequires:	youtube-dl
 Requires:	youtube-dl
 
