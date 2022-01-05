@@ -31,6 +31,7 @@ BuildRequires:	cmake(KF5CoreAddons)
 BuildRequires:	cmake(KF5Crash)
 BuildRequires:	python3dist(ytmusicapi)
 BuildRequires:	cmake(pybind11)
+BuildRequires:	python-devel
 BuildRequires:	python3dist(yt-dlp)
 Requires:	python3dist(yt-dlp)
 
