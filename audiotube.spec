@@ -2,8 +2,8 @@
 #define commit cc1ac2452e41873741c8b5f3fcafa29ae3ce5a30
 
 Name:		audiotube
-Version:	21.12
-Release:	%{?snapshot:0.%{snapshot}.}1
+Version:	22.02
+Release:	%{?snapshot:1.%{snapshot}.}1
 Summary:	YouTube Music client for Plasma Mobile
 %if 0%{?snapshot}
 Source0:	https://invent.kde.org/plasma-mobile/tokodon/-/archive/v%{version}/audiotube-v%{version}.tar.bz2
