@@ -19,6 +19,7 @@ BuildRequires:	bison
 BuildRequires:	flex
 BuildRequires:	cmake(ECM)
 BuildRequires:	cmake(Qt5Widgets)
+BuildRequires:	cmake(Qt5Concurrent)
 BuildRequires:	cmake(Qt5Core)
 BuildRequires:	cmake(Qt5Quick)
 BuildRequires:	cmake(Qt5Gui)
