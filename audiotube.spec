@@ -33,6 +33,7 @@ BuildRequires:	cmake(KF5I18n)
 BuildRequires:	cmake(KF5CoreAddons)
 BuildRequires:	cmake(KF5Crash)
 BuildRequires:	cmake(pybind11)
+BuildRequires:	cmake(KF5KirigamiAddons)
 BuildRequires:	python-devel
 BuildRequires:	python%{pyver}dist(yt-dlp)
 BuildRequires:	python%{pyver}dist(ytmusicapi)
