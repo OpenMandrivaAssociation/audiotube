@@ -4,12 +4,12 @@
 
 Name:		plasma6-audiotube
 Version:	24.01.90
-Release:	%{?git:0.%{git}.}2
+Release:	%{?git:0.%{git}.}1
 Summary:	YouTube Music client for Plasma Mobile
 %if 0%{?git}
 Source0:        https://invent.kde.org/plasma-mobile/%{name}/-/archive/master/%{name}-master.tar.bz2
 %else
-Source0:        http://download.kde.org/%{stable}/release-service/%{version}/src/audiotube-%{version}.tar.xz
+Source0:        https://download.kde.org/%{stable}/release-service/%{version}/src/audiotube-%{version}.tar.xz
 %endif
 License:	GPLv3
 Group:		Applications/Productivity
@@ -24,6 +24,9 @@ BuildRequires:	cmake(Qt6Core)
 BuildRequires:	cmake(Qt6Quick)
 BuildRequires:	cmake(Qt6Gui)
 BuildRequires:	cmake(Qt6QuickControls2)
+BuildRequires: cmake(Qt6Qml)
+BuildRequires: cmake(Qt6QmlCore)
+BuildRequires: cmake(Qt6QmlNetwork)
 BuildRequires:	cmake(Qt6Multimedia)
 BuildRequires:	cmake(Qt6Sql)
 BuildRequires:	cmake(Qt6Svg)
@@ -34,8 +37,15 @@ BuildRequires:	cmake(KF6CoreAddons)
 BuildRequires:	cmake(KF6Crash)
 BuildRequires:	cmake(pybind11)
 BuildRequires:	cmake(KF6KirigamiAddons)
+BuildRequires:	cmake(KF6WindowSystem)
 BuildRequires:	cmake(FutureSQL6)
 BuildRequires:	cmake(QCoro6)
+BuildRequires: qt6-qtbase-theme-gtk3
+BuildRequires: qt6-qtmultimedia-gstreamer
+BuildRequires:	qt6-qtbase-sql-postgresql
+BuildRequires: qt6-qtbase-sql-odbc
+BuildRequires: qt6-qtbase-sql-mariadb
+BuildRequires: qt6-qtbase-sql-firebird
 BuildRequires:	python-devel
 BuildRequires:	python%{pyver}dist(yt-dlp)
 BuildRequires:	python%{pyver}dist(ytmusicapi)
