@@ -1,13 +1,15 @@
 %define stable %([ "`echo %{version} |cut -d. -f3`" -ge 80 ] && echo -n un; echo -n stable)
-#define git 20200916
+%define git 20240218
+%define gitbranch release/24.02
+%define gitbranchd %(echo %{gitbranch} |sed -e "s,/,-,g")
 #define commit cc1ac2462e41873741c8b6f3fcafa29ae3ce6a30
 
 Name:		plasma6-audiotube
-Version:	24.01.95
+Version:	24.01.96
 Release:	%{?git:0.%{git}.}1
 Summary:	YouTube Music client for Plasma Mobile
 %if 0%{?git}
-Source0:        https://invent.kde.org/plasma-mobile/%{name}/-/archive/master/%{name}-master.tar.bz2
+Source0:        https://invent.kde.org/multimedia/audiotube/-/archive/%{gitbranch}/audiotube-%{gitbranchd}.tar.bz2
 %else
 Source0:        https://download.kde.org/%{stable}/release-service/%{version}/src/audiotube-%{version}.tar.xz
 %endif
@@ -55,7 +57,7 @@ Requires:	python%{pyver}dist(yt-dlp)
 YouTube Music client for Plasma Mobile
 
 %prep
-%autosetup -p1 -n audiotube-%{?git:master}%{!?git:%{version}}
+%autosetup -p1 -n audiotube-%{?git:%{gitbranchd}}%{!?git:%{version}}
 %cmake \
 	-DQT_MAJOR_VERSION=6 \
 	-DKDE_INSTALL_USE_QT_SYS_PATHS:BOOL=ON \
