@@ -5,7 +5,7 @@
 #define commit cc1ac2462e41873741c8b6f3fcafa29ae3ce6a30
 
 Name:		audiotube
-Version:	25.04.0
+Version:	25.04.3
 Release:	%{?git:0.%{git}.}1
 Summary:	YouTube Music client for Plasma Mobile
 %if 0%{?git}
@@ -15,8 +15,6 @@ Source0:        https://download.kde.org/%{stable}/release-service/%{version}/sr
 %endif
 License:	GPLv3
 Group:		Applications/Productivity
-BuildRequires:	cmake
-BuildRequires:	ninja
 BuildRequires:	bison
 BuildRequires:	flex
 BuildRequires:	cmake(ECM)
@@ -53,24 +51,16 @@ BuildRequires:	python%{pyver}dist(yt-dlp)
 BuildRequires:	python%{pyver}dist(ytmusicapi)
 Requires:	python%{pyver}dist(yt-dlp)
 
+%rename plasma6-audiotube
+
+BuildSystem:	cmake
+BuildOption:	-DKDE_INSTALL_USE_QT_SYS_PATHS:BOOL=ON
+BuildOption:	-DQT_MAJOR_VERSION=6
+
 %description
 YouTube Music client for Plasma Mobile
 
-%prep
-%autosetup -p1 -n audiotube-%{?git:%{gitbranchd}}%{!?git:%{version}}
-%cmake \
-	-DQT_MAJOR_VERSION=6 \
-	-DKDE_INSTALL_USE_QT_SYS_PATHS:BOOL=ON \
-	-G Ninja
-
-%build
-%ninja_build -C build
-
-%install
-%ninja_install -C build
-%find_lang audiotube
-
-%files -f audiotube.lang
+%files -f %{name}.lang
 %{_bindir}/audiotube
 %{_datadir}/applications/org.kde.audiotube.desktop
 %{_datadir}/icons/hicolor/scalable/apps/org.kde.audiotube.svg
