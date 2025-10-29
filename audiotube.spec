@@ -38,6 +38,7 @@ BuildRequires:	cmake(KF6Crash)
 BuildRequires:	cmake(pybind11)
 BuildRequires:	cmake(KF6KirigamiAddons)
 BuildRequires:	cmake(KF6WindowSystem)
+BuildRequires:	cmake(KF6IconThemes)
 BuildRequires:	cmake(FutureSQL6)
 BuildRequires:	cmake(QCoro6)
 BuildRequires: qt6-qtbase-theme-gtk3
