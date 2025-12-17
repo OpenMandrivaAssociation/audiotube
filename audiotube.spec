@@ -5,7 +5,7 @@
 #define commit cc1ac2462e41873741c8b6f3fcafa29ae3ce6a30
 
 Name:		audiotube
-Version:	25.08.3
+Version:	25.12.0
 Release:	%{?git:0.%{git}.}1
 Summary:	YouTube Music client for Plasma Mobile
 %if 0%{?git}
