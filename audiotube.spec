@@ -6,7 +6,7 @@
 
 Name:		audiotube
 Version:	26.08.2
-Release:	%{?git:0.%{git}.}1
+Release:	%{?git:0.%{git}.}2
 Summary:	YouTube Music client for Plasma Mobile
 %if 0%{?git}
 Source0:        https://invent.kde.org/multimedia/audiotube/-/archive/%{gitbranch}/audiotube-%{gitbranchd}.tar.bz2
@@ -47,7 +47,7 @@ BuildRequires:	qt6-qtbase-sql-postgresql
 BuildRequires: qt6-qtbase-sql-odbc
 BuildRequires: qt6-qtbase-sql-mariadb
 BuildRequires: qt6-qtbase-sql-firebird
-BuildRequires:	python-devel
+BuildRequires:	pkgconfig(python3)
 BuildRequires:	python%{pyver}dist(yt-dlp)
 BuildRequires:	python%{pyver}dist(ytmusicapi)
 Requires:	python%{pyver}dist(yt-dlp)
